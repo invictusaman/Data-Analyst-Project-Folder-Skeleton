@@ -37,14 +37,8 @@ def save_data(df: pd.DataFrame, file_path: Path) -> None:
 def load_raw_data(data_paths):
     return load_data(data_paths['raw'])
 
-def load_processed_data(data_paths):
-    return load_data(data_paths['processed'])
-
 def load_cleaned_data(data_paths):
     return load_data(data_paths['cleaned'])
-
-def save_processed_data(df, data_paths):
-    save_data(df, data_paths['processed'])
 
 def save_cleaned_data(df, data_paths):
     save_data(df, data_paths['cleaned'])

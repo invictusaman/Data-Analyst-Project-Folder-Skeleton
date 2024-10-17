@@ -1,0 +1,94 @@
+---
+title: "Add your project title here"
+author: "Aman Bhattarai"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+execute:
+  echo: true
+  warning: false
+---
+
+# Executive Summary
+
+(Delete this - Sample: This report presents an in-depth analysis of historical wildfire data in Australia, aiming to uncover patterns and trends in fire activities across different regions. Using various data visualization techniques, we explore the temporal and spatial distribution, their intensity, and associated factors.)
+
+# Introduction
+
+(Delete this  - Sample: Wildfires are a significant environmental concern in Australia, with-reaching ecological, economic, and social impacts. This study utilizes a comprehensive dataset of fire activities from 2005 onwards to provide insights into the nature and distribution of these events across the continent.)
+
+# Objective 
+
+- To gain insights into .... 
+- To identify key ....
+- To analyze ....
+- To understand .... (Post your questions)
+
+# Methodology   
+   
+This project utilized various methods including:   
+
+## Data Collection   
+Source of the data, timeframe, and collection criteria.   
+Tools or platforms used (e.g., web scraping, data import from a database).   
+
+## Data Cleaning   
+Describe handling of missing values, outlier detection, and transformations.   
+Explain specific filtering or exclusions applied for data quality.   
+
+## Exploratory Data Analysis   
+Overview of visualizations and statistical tests performed.   
+Highlight any initial trends, correlations, or unexpected patterns uncovered.   
+
+
+# Key Findings
+
+**Finding 1:** Summarize insight with supporting evidence (e.g., "Sales increase with marketing spend, with a correlation coefficient of 0.78"). (@fig-1)
+**Finding 2:** Detail another major finding, supported by data (e.g., "Customers aged 25-34 show highest engagement, accounting for 40% of sales"). (@fig-2)
+**Finding 3:** Highlight additional trends or discoveries relevant to stakeholders (e.g., "Sales exhibit seasonality, peaking in Q4 across all years"). (@fig-3)
+
+# Recommendation
+
+**Recommendation 1:** Suggest actionable step (e.g., "Allocate more budget toward marketing efforts for 25-34 age group").
+**Recommendation 2:** Another action item (e.g., "Develop seasonal campaigns focused on Q4").
+**Recommendation 3:** Additional insight or future strategy (e.g., "Analyze specific channels that perform best with younger demographics").
+
+# Challenges Faced
+
+- **Data Limitations:** Mention limitations (e.g., "Incomplete records for certain regions").
+- **Technical Issues:** Any technical difficulties (e.g., "Memory limitations when processing large data chunks").
+- **Resolution:** Describe how issues were addressed (e.g., "Aggregated data to overcome memory constraints").
+
+# Skills Developed   
+
+- **Technical Skills:** Outline new technical skills (e.g., "Enhanced data visualization skills with Seaborn and Matplotlib").
+- **Analytical Techniques:** List techniques learned or applied (e.g., "Learned customer segmentation analysis").
+
+# Conclusion   
+
+Recap main insights and recommendations briefly (e.g., "Increasing marketing spend and focusing on target demographics can drive sales growth").
+
+# References   
+
+- Cite any data sources, external studies, or tools used.
+
+# Appendices   
+
+## Appendix A: Project Key insights Summary 
+- This appendix summarizes ......
+
+## Appendix B: Data Collection Methodology 
+- Explain how you used scrapers or other methods for data collection, how you refined the data.
+
+## Appendix C: Graphs and Visualization   
+
+![Caption for Figure 1](reports/figures/figure1.png){#fig-1 width=80% fig-align="center"}
+![Caption for Figure 2](reports/figures/figure2.png){#fig-2 width=80% fig-align="center"}
+![Caption for Figure 3](reports/figures/figure3.png){#fig-3 width=80% fig-align="center"}
+
+*Additional visualizations and detailed statistical analysis are available upon request.*
+
+
+

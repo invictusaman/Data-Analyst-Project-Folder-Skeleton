@@ -7,9 +7,8 @@ def get_project_root():
 def get_data_paths(dataset_name):
     root = get_project_root()
     return {
-        'raw': root / 'data' / 'raw' / f'raw_{dataset_name}',
-        'processed': root / 'data' / 'processed' / f'processed_{dataset_name}',
-        'cleaned': root / 'data' / 'cleaned' / f'cleaned_{dataset_name}'
+        'raw': root / 'data' / 'raw' / f'{dataset_name}.csv',
+        'cleaned': root / 'data' / 'cleaned' / f'{dataset_name}_cleaned.csv'
     }
 
 def get_output_paths():
