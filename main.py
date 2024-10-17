@@ -8,7 +8,7 @@ def main():
     print("Starting data analysis...")
 
     # Initialize paths
-    data_paths = get_data_paths("example")  # Replace with your dataset name
+    data_paths = get_data_paths("sample.csv")  # Replace with your dataset name
     output_paths = get_output_paths()
 
     # Ensure all necessary directories exist

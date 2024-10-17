@@ -1,0 +1,48 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+
+# DotEnv configuration
+.env
+
+# Database
+*.db
+
+# IDE Configurations
+.idea/         # PyCharm
+.vscode/       # VS Code
+.zed/          # ZED IDE
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Mac OS-specific files
+.DS_Store
+.AppleDouble
+
+# Mypy cache
+.mypy_cache/
