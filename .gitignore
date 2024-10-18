@@ -1,6 +1,7 @@
 # Byte-compiled / optimized files
 __pycache__/
 *.py[cod]
+.python-version
 
 # Virtual environments
 env/

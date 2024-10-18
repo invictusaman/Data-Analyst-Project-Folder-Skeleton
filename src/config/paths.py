@@ -1,14 +1,21 @@
 import os
 from pathlib import Path
+import sys
 
 def get_project_root():
-    return Path(__file__).parent.parent.parent
+    # Check if running in a Jupyter notebook since __file__ is not supported
+    if 'ipykernel' in sys.modules:
+        # Navigate one level up from the notebooks folder
+        return Path.cwd().parent
+    else:
+        # Use the script's location for standard Python scripts
+        return Path(__file__).parent.parent.parent
 
 def get_data_paths(dataset_name):
     root = get_project_root()
     return {
-        'raw': root / 'data' / 'raw' / f'{dataset_name}.csv',
-        'cleaned': root / 'data' / 'cleaned' / f'{dataset_name}_cleaned.csv'
+        'raw': root / 'data' / 'raw' / dataset_name,
+        'cleaned': root / 'data' / 'cleaned' / f'cleaned_{dataset_name}'
     }
 
 def get_output_paths():
