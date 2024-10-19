@@ -39,7 +39,7 @@ This project skeleton was created to standardize and streamline data analysis wo
     - Analysis
     - Visualization
 2.  `main.py` runs the entire data analysis pipeline
-3.  Individual modules can be imported into Jupyter notebooks for interactive analysis
+3.  Individual modules can be imported into Jupyter notebooks for interactive analysis, or you can utilize `original-notebook.ipynb` for ease to work on notebook environment.
 
 ## Required Steps
 
