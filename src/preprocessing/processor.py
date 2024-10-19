@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from .loader import load_raw_data, save_cleaned_data
-from src.analysis.analyzer import initial_eda
+from src.analysis.analyzer import perform_eda
 
 def process_and_clean_data(data_paths):
     df = load_raw_data(data_paths)
@@ -10,16 +10,16 @@ def process_and_clean_data(data_paths):
         print("No data to process.")
         return
 
-    print("Performing Initial Exploratory Data Analysis...")
-    initial_eda(df)
+    print("Performing Initial Exploratory Data Analysis...\n")
+    perform_eda(df, is_initial=True)
 
-    print("\nProcessing and cleaning data...")
+    print("\nProcessing and cleaning data...\n")
     df = remove_duplicates(df)
-    df = convert_date_columns(df)
+    #df = convert_date_columns(df)
     df = handle_missing_values(df)
-    df = handle_outliers(df)
-    df = normalize_numeric_columns(df)
-    df = encode_categorical_columns(df)
+    #df = handle_outliers(df, exclude_cols=['col_name1', 'col_name2'])
+    #df = normalize_numeric_columns(df, exclude_cols=['col_name1','col_name2'])
+    #df = encode_categorical_columns(df, exclude_cols=['col_name1', 'col_name2'])
 
     save_cleaned_data(df, data_paths)
     print("Data processing and cleaning completed.")
@@ -56,8 +56,11 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
                 print(f"Warning: '{col}' has {pct_missing:.2f}% missing values. Consider further investigation.")
     return df
 
-def handle_outliers(df: pd.DataFrame) -> pd.DataFrame:
-    numeric_cols = df.select_dtypes(include=['number']).columns
+def handle_outliers(df: pd.DataFrame, exclude_cols: list = None) -> pd.DataFrame:
+    if exclude_cols is None:
+        exclude_cols = []
+    # Select numeric columns, excluding specified columns
+    numeric_cols = df.select_dtypes(include=['number']).columns.difference(exclude_cols) 
     for col in numeric_cols:
         Q1 = df[col].quantile(0.25)
         Q3 = df[col].quantile(0.75)
@@ -68,20 +71,26 @@ def handle_outliers(df: pd.DataFrame) -> pd.DataFrame:
         if outliers > 0:
             print(f"Detected {outliers} outliers in '{col}'.")
             df[col] = df[col].clip(lower_bound, upper_bound)
-            print(f"Clipped outliers in '{col}' to [{lower_bound:.2f}, {upper_bound:.2f}].")
+            print(f"Clipped outliers in '{col}' to [{lower_bound:.2f}, {upper_bound:.2f}].")  
     return df
 
-def normalize_numeric_columns(df: pd.DataFrame) -> pd.DataFrame:
-    numeric_cols = df.select_dtypes(include=['number']).columns
+def normalize_numeric_columns(df: pd.DataFrame, exclude_cols: list = None) -> pd.DataFrame:
+    if exclude_cols is None:
+        exclude_cols = []
+    # Select numeric columns, excluding specified columns
+    numeric_cols = df.select_dtypes(include=['number']).columns.difference(exclude_cols) 
     scaler = StandardScaler()
     df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
-    print(f"Normalized {len(numeric_cols)} numeric columns.")
+    print(f"Normalized {len(numeric_cols)} numeric columns, excluding: {exclude_cols}.")
     return df
 
-def encode_categorical_columns(df: pd.DataFrame) -> pd.DataFrame:
-    categorical_cols = df.select_dtypes(include=['object']).columns
+def encode_categorical_columns(df: pd.DataFrame, exclude_cols: list = None) -> pd.DataFrame:
+    if exclude_cols is None:
+        exclude_cols = []
+    # Select categorical columns, excluding specified columns
+    categorical_cols = df.select_dtypes(include=['object']).columns.difference(exclude_cols)
     for col in categorical_cols:
-        if df[col].nunique() < 10:  # You can adjust this threshold
+        if df[col].nunique() < 10:  # Adjust this threshold if needed
             df = pd.get_dummies(df, columns=[col], prefix=col)
             print(f"One-hot encoded '{col}'.")
         else:

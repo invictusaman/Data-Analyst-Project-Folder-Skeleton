@@ -19,6 +19,7 @@ def plot_histogram(df, column, output_paths):
     plt.xlabel(column)
     plt.ylabel('Frequency')
     plt.savefig(output_paths['figures'] / f'{column}_distribution.png')
+    plt.show()
     plt.close()
 
 def plot_time_series(df, date_column, value_column, output_paths):
@@ -28,6 +29,7 @@ def plot_time_series(df, date_column, value_column, output_paths):
     plt.xlabel(date_column)
     plt.ylabel(value_column)
     plt.savefig(output_paths['figures'] / f'{value_column}_trend.png')
+    plt.show()
     plt.close()
 
 def plot_category_comparison(df, category_column, value_column, output_paths):
@@ -38,4 +40,5 @@ def plot_category_comparison(df, category_column, value_column, output_paths):
     plt.ylabel(value_column)
     plt.xticks(rotation=45)
     plt.savefig(output_paths['figures'] / f'{value_column}_by_{category_column}.png')
+    plt.show()
     plt.close()

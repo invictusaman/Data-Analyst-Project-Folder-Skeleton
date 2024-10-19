@@ -3,12 +3,15 @@ title: "Add your project title here"
 author: "Aman Bhattarai"
 format: 
   pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
+    toc: true               # Table of Contents
+    number-sections: true    # Numbered sections
+    colorlinks: true         # Hyperlinked sections in color
+    pdf-engine: xelatex      # Use XeLaTeX engine
+    default-image-extension: png  # Use PNG for images 
+    papersize: letter        # Paper size set to letter
 execute:
-  echo: true
-  warning: false
+  echo: true               # Print code output
+  warning: false           # Suppress warnings in the report
 ---
 
 # Executive Summary
@@ -84,9 +87,9 @@ Recap main insights and recommendations briefly (e.g., "Increasing marketing spe
 
 ## Appendix C: Graphs and Visualization   
 
-![Caption for Figure 1](reports/figures/figure1.png){#fig-1 width=80% fig-align="center"}
-![Caption for Figure 2](reports/figures/figure2.png){#fig-2 width=80% fig-align="center"}
-![Caption for Figure 3](reports/figures/figure3.png){#fig-3 width=80% fig-align="center"}
+![Caption for Figure 1](figures/figure1.png){#fig-1 width=80% fig-align="center"}
+![Caption for Figure 2](figures/figure2.png){#fig-2 width=80% fig-align="center"}
+![Caption for Figure 3](figures/figure3.png){#fig-3 width=80% fig-align="center"}
 
 *Additional visualizations and detailed statistical analysis are available upon request.*
 
