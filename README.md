@@ -49,7 +49,7 @@ This project skeleton was created to standardize and streamline data analysis wo
 4.  Run the analysis: `python main.py`
 5.  Utilize Quarto to generate final reports.
 
-Note: If you are initially uncomfortable with running python files, code your program in `notebooks/original-notebook.ipynb` and convert each step into functions and append them in `processor.py` or `analyzer.py` or `visualizer.py` accordingly.
+_Note: If you are initially uncomfortable with running python files, code your program in `notebooks/original-notebook.ipynb` and convert each step into functions and append them in `processor.py` or `analyzer.py` or `visualizer.py` accordingly._
 
 ## Generating requirements.txt
 
@@ -63,4 +63,4 @@ Run `pipreqs --force` in your project folder directory, if not pass the path as 
 
 ---
 
-[Visit my personal portfolio](https://amanbhattarai.com.np) to check more data analyst stuffs.
+[Visit my personal portfolio](https://amanbhattarai.com.np) to check cool data analyst stuffs.
